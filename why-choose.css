@@ -1,0 +1,169 @@
+/* technologies-section */
+.why-choose-technology .technology-head-image {
+    text-align: center;
+    max-width: 33.33%;
+    width: 100%;
+}
+/* out technology section  */
+.our-technology .technologies-section{
+    max-width: 70%;
+    margin: 0 auto;
+}
+.therapy-section{
+    position: relative;
+    overflow: hidden;
+}
+.therapy-section:before {
+    position: absolute;
+    content: "";
+    width: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 100%;
+    background: var(--color-main);
+    z-index: -1;
+    border-radius:var(--border);
+}
+.therapy-machine .therapy-image-description:nth-child(2n+0) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.therapy-image-description {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding: 40px 25px;
+    position: relative;
+}
+.therapy-image{
+    width: 50%;
+    vertical-align: bottom;
+}
+.therapy-machine {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-block: 30px;
+}
+.therapy-image img{
+    border-radius:var(--border);
+}
+.therapy-heading {
+    max-width: 44%;
+    margin: 0 auto 0 0;
+}
+.therapy-machine .therapy-image-description:nth-child(2n+0) .therapy-heading {
+    margin: 0 0 0 auto;
+}
+footer h3{
+    color: var(--color-white);
+}
+.therapy-machine .therapy-image-description:before {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: var(--color-white);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--circle);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    box-shadow: 0px 7px 20px -10px var(--color-black);
+}
+.therapy-heading h3{
+    color: var(--color-black);
+}
+.therapy-machine .therapy-image-description:nth-child(1):before {
+    content: "1";
+    top: -20px;
+}
+.therapy-machine .therapy-image-description:nth-child(2):before {
+    content: "2";
+}
+.therapy-machine .therapy-image-description:nth-child(3):before {
+    content: "3";
+}
+.therapy-machine .therapy-image-description:nth-child(4):before {
+    content: "4";
+}
+.therapy-machine .therapy-image-description:nth-child(5):before {
+    content: "5";
+}
+.therapy-machine .therapy-image-description:nth-child(6):before {
+    content: "6";
+}
+.therapy-machine .therapy-image-description:nth-child(7):before {
+    content: "7";
+}
+.therapy-machine .therapy-image-description:nth-child(8):before {
+    content: "8";
+}
+.therapy-machine .therapy-image-description:nth-child(9):before {
+    content: "9";
+}
+.therapy-machine .therapy-image-description:nth-child(10):before {
+    content: "10";
+}
+.therapy-machine .therapy-image-description:nth-child(1):before {
+    content: "1";
+    top: -45px;
+}
+.therapy-image-description,.therapy-machine .therapy-image-description:nth-child(2n+0) {
+    padding: 0;
+    margin: 25px 25px 30px;
+    gap: 40px;
+}
+@media only screen and (max-width:1024px    ){
+    .technologies-section{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .why-choose-technology .technology-head-image{
+        width: 100%;
+        max-width: 45%;
+    }
+}
+@media only screen and (max-width:768px){
+    .our-technology .technologies-section {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .technology-head-image{
+        width: 33.33%;
+    }
+    .therapy-image-description{
+        justify-content: unset;
+    }
+    .therapy-image-description,.therapy-machine .therapy-image-description:nth-child(2n+0) {
+        flex-direction: column-reverse;
+    }
+    .therapy-heading {
+        max-width: 100%;
+    }
+    .therapy-image {
+       width: 100%;
+    }  
+    .therapy-section:before {
+        width: 40%;
+    }
+    .therapy-image-description{
+        gap: 20px;
+    }
+    .therapy-heading p {
+        text-align: start;
+    }
+}
+@media only screen and (max-width:600px){
+    .technology-head-image{
+        width: 80%;
+    }
+    .why-choose-technology .technology-head-image {
+        width: 100%;
+        max-width: 100%;
+    }
+}
