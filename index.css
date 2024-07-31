@@ -115,10 +115,6 @@ p {
     font-weight: 400;
 }
 
-section {
-    padding-block: 60px 0;
-}
-
 a {
     text-decoration: none;
     color: white;
@@ -176,12 +172,12 @@ h2.bottom-line::before {
     justify-content: center;
     margin-bottom: 60px;
 }
-@media only screen and (max-width:1024px) {
+@media screen and (max-width:1024px) {
     h1 {
         font-size: var(--rh1-size)
     }
 }
-    @media only screen and (max-width:768px) {
+@media screen and (max-width:768px) {
     h2 {
         font-size: var(--rrh2-size);
         font-weight: 700;
@@ -199,7 +195,7 @@ h2.bottom-line::before {
     }
 
     section {
-        padding-block: 35px 0;
+        padding-top: 35px !important;
     }
 
     p {
@@ -208,9 +204,9 @@ h2.bottom-line::before {
     }
 }
 
-@media only screen and (max-width:425px) {
+@media screen and (max-width:425px) {
     section {
-        padding-block: 30px 0;
+        padding-top: 30px !important;
     }
 }
 
@@ -1366,7 +1362,7 @@ footer h3 {
     }
 }
 
-@media only screen and (max-width: 426px) {
+@media screen and (max-width: 426px) {
     .background-animation {
         right: 63%;
     }
