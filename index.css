@@ -19,6 +19,7 @@
     --rh2-size:28px;
     --rh3-size:22px;
     --rh4-size: 22px;
+    --rrh2-size:22px;
 }
 
 * {
@@ -182,8 +183,11 @@ h2.bottom-line::before {
 }
     @media only screen and (max-width:768px) {
     h2 {
-        font-size: var(--rh2-size);
+        font-size: var(--rrh2-size);
         font-weight: 700;
+    }
+    a{
+        font-size: var(--rp-size);
     }
     h3{
         font-size: var(--rh3-size);
@@ -261,7 +265,7 @@ body.revealed[style="overflow: hidden;"]:after {
 
 .loading-text {
     width: 100%;
-    max-width: 520px;
+    max-width: 100%;
     text-align: center;
     color: var(--color-white);
     position: relative;
@@ -371,7 +375,14 @@ loder {
     text-decoration: none;
     margin-right: 12px;
 }
-
+/* @media screen and (max-width:767px) {
+    .loading-container img {
+        max-width: 80%;
+        width: 100%;
+        display: table;
+        margin: 0 auto;
+    }
+} */
 /* </------------- Fixed Text ------------------/> */
 .text-social {
     display: flex;
@@ -1096,8 +1107,7 @@ footer h3 {
     }
 
     .description-text h3 {
-        display: grid;
-        grid-template-rows: 40px;
+        display: block;
     }
 
     .navigation-slide.activate .navigation-content {
@@ -1228,6 +1238,7 @@ footer h3 {
 @media only screen and (max-width:600px) {
     .loading-text {
         margin-bottom: 10px;
+        font-size: 20px;
     }
 
     .description-content:after {
@@ -1238,10 +1249,12 @@ footer h3 {
     }
 
     .description-text p {
-        display: grid;
-        grid-template-rows: 220px;
+        display: block;
     }
-
+    .description-text {
+        gap: 10px;
+        padding-top: 10px;
+    }
     .banner-heading {
         align-items: center;
         gap: 60px;
@@ -1252,7 +1265,7 @@ footer h3 {
     }
 
     .description-content {
-        padding: 40px 24px 0;
+        padding: 40px 24px 30px;
     }
     .text-social {
         display: flex;
@@ -1278,7 +1291,15 @@ footer h3 {
         justify-content: center;
         display: flex;
     }
-
+    .appointment-section {
+        padding-block: 10px 0;
+    }
+    .fotter-logo {
+        max-width: 80%;
+        padding-bottom: 40px;
+        display: table;
+        margin: 0 auto;
+    }
     .description-text {
         width: 100%;
         display: flex;
@@ -1299,11 +1320,9 @@ footer h3 {
     }
 
     .description-image {
-        max-width: 35%;
-    }
-
-    .description-image {
         margin-top: -70px;
+        max-width: 45%;
+        padding: 25px 0px;
     }
 
     .find-heading {
@@ -1363,6 +1382,8 @@ footer h3 {
 
     h2.bottom-line {
         text-align: center;
+        display: table;
+        margin: 0 auto;
     }
 
     .image-banner {

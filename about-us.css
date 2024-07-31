@@ -99,39 +99,6 @@ h3 {
   }
 }
 
-/* .slick-slide img {
-  display: inline-block !important;}
-.about_us-head-image img {
-  border-radius: 100px;
-  box-shadow: 0px 0px 15px 5px gray;}
-button.slick-nexts.slick-arrow {
-  right: 0;}
-.about_us-head-image h4:nth-child(2){
-  padding-bottom: 20px;}
-button.slick-prevs.slick-arrow,
-button.slick-nexts.slick-arrow {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  border: 1px solid;
-  background: no-repeat;
-  font-size: 28px;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.5s ease-in-out;
-  color: var(--color-black);}
-button.slick-prevs.slick-arrow:hover,
-button.slick-nexts.slick-arrow:hover {
-  background: var(--color-gold);
-  color: var(--color-white);
-  border: 1px solid transparent;
-  transition: 0.5s ease-in-out;}
-*/
 /* </------------- Our Team Section Start ------------------/> */
 .team-heading h3 {
   display: table;
@@ -159,7 +126,7 @@ button.slick-nexts.slick-arrow:hover {
 .team-text h4 {
   display: grid;
   justify-content: center;
-  grid-template-rows: 90px;
+  padding-bottom: 40px;
   text-align: start;
   font-size: var(--h4-size);
 }
@@ -354,6 +321,12 @@ button.slick-nexts.slick-arrow:hover {
   .why-choose {
     width: 100%;
   } 
+  .team-image-section {
+    padding-top: 35px;
+  }
+  .image-team {
+    width: 100%;
+  }
   .promise-content {
     width: 50%;
   }
@@ -368,16 +341,21 @@ button.slick-nexts.slick-arrow:hover {
     max-width: 45%;
   }
 }
-  @media only screen and (max-width:769px) {
+  @media screen and (max-width:769px) {
+  section {
+      padding-top: 25px;
+  }
   .banner-about_us {
     padding-block: 100px 50px;
   }
   .team-heading h3{
     padding-block: 0;
+    text-align: center;
   }
   .founder-text h4,
   .team-text h4 {
-    grid-template-rows: 30px;
+    padding-block: 20px;
+    text-align: center;
   }
 
   .technologies-image img {
@@ -389,7 +367,7 @@ button.slick-nexts.slick-arrow:hover {
   }
 
   .team-image {
-    padding-bottom: 70%;
+    padding-bottom: 100%;
   }
 
   .our-team {
@@ -401,10 +379,13 @@ button.slick-nexts.slick-arrow:hover {
   }
 
   .why-choose {
-    width: 90%;
-    padding: 47px 15px 15px;
+    width: 100%;
+    padding: 25px 15px 15px;
+    margin: 40px auto 0;
   }
-
+  .promise-image {
+    width: 100%;
+  } 
   .promise-image-content {
     flex-direction: column;
     gap: 0px;
@@ -428,12 +409,13 @@ button.slick-nexts.slick-arrow:hover {
   }
 
   .team-heading {
-    padding-block: 30px;
+    padding-block: 0 10px;
   }
 
   .founder-text h4,
   .team-text h4 {
     font-size: 18px;
+    text-align: center;
   }
 
   .founder-text p {
@@ -448,9 +430,7 @@ button.slick-nexts.slick-arrow:hover {
 
   .promise-image,
   .team-image-text {
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
+    max-width: 100%;
   }
   .technology-section .technology-head-image {
     max-width: 50%;
@@ -489,11 +469,6 @@ button.slick-nexts.slick-arrow:hover {
   .technologies-image:before {
     width: 100%;
     height: 98%;
-  }
-
-  .founder-text h4,
-  .team-text h4 {
-    grid-template-rows: 50px;
   }
 
   .promise-head {
