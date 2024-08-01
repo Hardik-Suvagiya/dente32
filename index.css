@@ -170,7 +170,10 @@ h2.bottom-line::before {
 .section-heading {
     display: flex;
     justify-content: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+}
+section{
+    padding-block: 20px;
 }
 @media screen and (max-width:1024px) {
     h1 {
