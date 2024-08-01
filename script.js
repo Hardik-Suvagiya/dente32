@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('loader').style.display = 'none';
             document.body.style.overflow = 'auto'; // Enable body scroll
             document.body.classList.remove('revealed');
-        }, 3000); // Match this duration with the CSS transition duration
-    }, 3000);
+        }, 4500); // Match this duration with the CSS transition duration
+    }, 4500);
 });
 
   // toggle function 
@@ -128,40 +128,40 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   items.forEach((item) => item.addEventListener("click", toggleAccordion));
 
-// gallery section
-  document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const close = document.querySelector('.close');
+// lazy Load section
+document.addEventListener("DOMContentLoaded", function() {
+  let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+  let active = false;
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.getAttribute('data-filter');
+  const lazyLoad = function() {
+      if (active === false) {
+          active = true;
 
-            galleryItems.forEach(item => {
-                if (filter === 'all' || item.classList.contains(filter)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    });
+          setTimeout(function() {
+              lazyImages.forEach(function(lazyImage) {
+                  if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+                      lazyImage.src = lazyImage.dataset.src;
+                      lazyImage.classList.remove("lazy");
+                      lazyImage.classList.add("lazy-loaded");
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const img = item.querySelector('img');
-            const caption = item.querySelector('.caption').innerText;
-            lightboxImg.src = img.src;
-            lightboxCaption.innerText = caption;
-            lightbox.style.display = 'flex';
-        });
-    });
+                      lazyImages = lazyImages.filter(function(image) {
+                          return image !== lazyImage;
+                      });
 
-    close.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-    });
+                      if (lazyImages.length === 0) {
+                          document.removeEventListener("scroll", lazyLoad);
+                          window.removeEventListener("resize", lazyLoad);
+                          window.removeEventListener("orientationchange", lazyLoad);
+                      }
+                  }
+              });
+
+              active = false;
+          }, 200);
+      }
+  };
+
+  document.addEventListener("scroll", lazyLoad);
+  window.addEventListener("resize", lazyLoad);
+  window.addEventListener("orientationchange", lazyLoad);
 });

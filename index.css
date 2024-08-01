@@ -52,7 +52,14 @@ body[style="overflow: auto;"]::before {
     z-index: 9999;
     display: none;
 }
+.lazy {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
 
+.lazy-loaded {
+    opacity: 1;
+}
 .container-section {
     max-width: 1570px;
     margin: 0 auto;
