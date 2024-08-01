@@ -14,6 +14,7 @@
     --h2-size:35px;
     --h3-size:26px;
     --sh1-size:55px;
+    --lp-size:14px;
     --rp-size:14px;
     --rh1-size:38px;
     --rh2-size:28px;
@@ -178,6 +179,9 @@ section{
 @media screen and (max-width:1024px) {
     h1 {
         font-size: var(--rh1-size)
+    }
+    p{
+        font-size: var(--lp-size);
     }
 }
 @media screen and (max-width:768px) {
@@ -851,7 +855,7 @@ footer h3 {
         padding-top: 45px;
     }
     .section-heading{
-        margin-bottom: 45px;
+        margin-bottom: 35px;
     }
     .banner-text h1 {
         font-size: var(--sh1-size);
