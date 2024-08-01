@@ -374,14 +374,6 @@ loder {
     text-decoration: none;
     margin-right: 12px;
 }
-/* @media screen and (max-width:767px) {
-    .loading-container img {
-        max-width: 80%;
-        width: 100%;
-        display: table;
-        margin: 0 auto;
-    }
-} */
 /* </------------- Fixed Text ------------------/> */
 .text-social {
     display: flex;
@@ -470,6 +462,7 @@ nav.navigation ul li a,
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+    padding: 0;
 }
 
 .banner-heading {
