@@ -58,10 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
       this.classList.toggle('activate');
   });
 
-
-
-
-
   const labels = document.querySelectorAll(".form-control label");
   const delayUnit = 50;
 
@@ -75,9 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .join("");
   });
   
-
-
-
   document.addEventListener("DOMContentLoaded", function () {
     // Show loader when the page is loaded
     document.getElementById('loader').style.display = 'flex';
@@ -96,16 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
 });
 
-
-
   // toggle function 
   document.querySelector('.navigation-slide')
     .addEventListener('click', function () {
       this.classList.toggle('activate');
 });
-
-
-
 
   $('.content-service-slider').slick({
     dots: false,
@@ -139,3 +127,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   items.forEach((item) => item.addEventListener("click", toggleAccordion));
+
+// gallery section
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const close = document.querySelector('.close');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.classList.contains(filter)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            const caption = item.querySelector('.caption').innerText;
+            lightboxImg.src = img.src;
+            lightboxCaption.innerText = caption;
+            lightbox.style.display = 'flex';
+        });
+    });
+
+    close.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+});
